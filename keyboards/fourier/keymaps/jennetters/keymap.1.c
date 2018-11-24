@@ -8,7 +8,8 @@ extern keymap_config_t keymap_config;
 // entirely and just use numbers.
 #define _BASE 0
 #define _FN1 1
-#define _ML 2
+// #define _ML 2
+#define _FN2 2
 
 enum custom_keycodes {
   QWERTY = SAFE_RANGE,
@@ -19,8 +20,11 @@ enum custom_keycodes {
 #define XXXXXXX KC_NO
 #define KC_FN1 MO(_FN1)
 #define KC_ML MO(_ML)
+#define KC_FN2 MO(_FN2)
 #define KC_SPFN1 LT(_FN1, KC_SPACE)
+#define KC_SPFN2 LT(_FN2, KC_SPACE)
 #define KC_BSFN1 LT(_FN1, KC_BSPC)
+#define KC_BSFN2 LT(_FN2, KC_BSPC)
 #define KC_RST RESET
 #define KC_DBUG DEBUG
 #define KC_RTOG RGB_TOG
@@ -59,13 +63,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  // |-----`----`----`----`----`----|----`----`----`----`----`--------|
  // | SHIFT | Z  | X  | C  | V  | B  | N  | M  | ,  | .  | /  | SHFT |
  // |-------`----`----`----`----`----|----`----`----`----`----`------|
- // | CTL | SYS| ALT | SP    SPACE | SPACE  | FN1 | CTL  | ML | ENT  |
+ // | CTL | SYS| ALT | SP    SPACE | SPACE  | FN1 | CTL  | ML  | ENT |
  // `-----+----+-----+----+--------|--------+-----+------+----+------'
  
   TD(ESC_GR), TD(Q_1), TD(W_2), TD(E_3), TD(R_4), TD(T_5), TD(Y_6), TD(U_7), TD(I_8), TD(O_9), TD(P_0),TD(MIN_LB),TD(EQL_RB), \
   KC_TAB, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, TD(SCL_QUO), KC_BSPC, \
   KC_LSPO, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSPC, \
-  KC_LCTL, KC_LGUI, KC_LALT, KC_SPACE, KC_SPACE, KC_SPACE, KC_FN1, KC_LCTL, TG(_ML), KC_ENTER
+  KC_LCTL, KC_LGUI, KC_LALT, KC_SPACE, KC_SPACE, KC_SPACE, KC_FN1, KC_LCTL, , KC_ENTER
   ),
 
   [_FN1] = LAYOUT_kc(
@@ -85,7 +89,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    , , , , , , , , , 
   ),
 
-  [_ML] = LAYOUT(
+  // [_ML] = LAYOUT(
+ // ,----+----+----+----+----+----|----+----+----+----+----+----+----.
+ // |    |ACL0|ACL1|ACL2|    |    |    |WHUP| UP |    |    |    |    |
+ // |----`----`----`----`----`----|----`----`----`----`----`----`----|
+ // |     |   |     |    |    |    |    | LT | DN | RT |    |        |
+ // |-----`----`----`----`----`----|----`----`----`----`----`--------|
+ // |       |    |    |    |    |    |    |WHDN|    |    |    |      |
+ // |-------`----`----`----`----`----|----`----`----`----`----`------|
+ // |     |    |     |    |        |        |     |      |    |      |
+ // `-----+----+-----+----+--------|--------+-----+------+----+------'
+
+  /*  , KC_MS_ACCEL0, KC_MS_ACCEL2, KC_MS_ACCEL3, , , , KC_MS_WH_UP, KC_MS_UP, , , , , \
+  //  , , , , , , , KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, , , \
+  //  , , , , , , , KC_MS_WH_DOWN, , , , , \
+  //  , , , , , KC_MS_BTN1, KC_MS_BTN3, KC_MS_BTN2, , 
+  // ),
+*/
+
+ [_FN2] = LAYOUT_kc(
  // ,----+----+----+----+----+----|----+----+----+----+----+----+----.
  // |    |    |    |    |    |    |    |    |    |    |    |    |    |
  // |----`----`----`----`----`----|----`----`----`----`----`----`----|
@@ -93,13 +115,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  // |-----`----`----`----`----`----|----`----`----`----`----`--------|
  // |       |    |    |    |    |    |    |    |    |    |    |      |
  // |-------`----`----`----`----`----|----`----`----`----`----`------|
- // |     |    |     |    |        |   MS1  | MS3 | MS2  | BL |      |
+ // |     |    |     |    |        |        |     |      |    |      |
  // `-----+----+-----+----+--------|--------+-----+------+----+------'
 
-   KC_, KC_MS_ACCEL0, KC_MS_ACCEL1, KC_MS_ACCEL2, KC_, KC_, KC_, KC_MS_WH_UP, KC_MS_UP, KC_, KC_, KC_, KC_, \
-   KC_, KC_, KC_, KC_, KC_, KC_, KC_, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_, KC_, \
-   KC_, KC_, KC_, KC_, KC_, KC_, KC_, KC_MS_WH_DOWN, KC_, KC_, KC_, KC_, \
-   KC_, KC_, KC_, KC_, KC_, KC_MS_BTN1, KC_MS_BTN3, KC_MS_BTN2, TG(_BASE), KC_  
+   , , , , , , , , , , , , , \
+   , , , , , , , , , , , , \
+   , , , , , , , , , , , , \
+   , , , , , , , , ,   
   )
 
 };
