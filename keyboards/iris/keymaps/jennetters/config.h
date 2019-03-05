@@ -36,3 +36,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGBLIGHT_HUE_STEP 8
 #define RGBLIGHT_SAT_STEP 8
 #define RGBLIGHT_VAL_STEP 8
+
+#define MOUSEKEY_DELAY 0
+#define MOUSEKEY_TIME_TO_MAX 30
+#define MOUSEKEY_INTERVAL 13

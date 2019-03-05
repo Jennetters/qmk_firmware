@@ -19,7 +19,7 @@ enum custom_keycodes {
 
 #define KC_ KC_TRNS
 #define _______ KC_TRNS
-
+#define XXXXXXX KC_NO
 #define KC_LOWR LOWER
 #define KC_RASE RAISE
 #define KC_YUNO YUNO
@@ -76,24 +76,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    , , DEL, DEL, ,  
   ),
 
-  [_RAISE] = LAYOUT_kc(
+  [_RAISE] = LAYOUT(
   //  ,----+----+----+----+----+----.              ,----+----+----+----+----+----.
-  //  |    | F1 | F2 |    |    |    |              |    |    |    | [  | ]  | =  |
+  //  |    |    |    |    |    |    |              |    |    |    | [  | ]  | =  |
   //  |----+----+----+----+----+----|              |----+----+----+----+----+----|
-  //  |    |    | UP |    |    |    |              |    |    |    | {  | }  | DEL|
+  //  |    |    | UP |    |    |    |              | WHU|    | UP | {  | }  | DEL|
   //  |----+----+----+----+----+----|              |----+----+----+----+----+----|
-  //  |    | LT | DN | RT |    |    |              |SHRG|    |    |    |PIPE|    |
+  //  |    | LT | DN | RT |    |    |              | WHD| LT | DN | RT |PIPE|    |
   //  |----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-  //  |    |    |    |    |    |    |    |    |    |    |    |    |    | \  |    |
+  //  |    |    |    |    |    |    |    |    |    |    | MS1| MS3| MS2| \  |    |
   //  `----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
   //                   \     |    |     /      \    \     |     / 
   //                    `----+----+----'        `----+----+----'
 
-   , F1, F2, , , , , , , LBRC, RBRC, EQL, \
-   , , UP, , , , YUNO, NOVY, , LCBR, RCBR, DEL, \
-   , LEFT, DOWN, RIGHT, , , SHRG, , , , PIPE, , \
-   , , , , , , , , , , , , BSLS, , \
-   , , , , , 
+   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_LBRC, KC_RBRC, KC_EQL, \
+   KC_NO, KC_NO, KC_UP, KC_NO, KC_NO, KC_NO, KC_MS_WH_UP, KC_NO, KC_MS_UP, KC_LCBR, KC_RCBR, KC_DEL, \
+   KC_NO, KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO, KC_NO, KC_MS_WH_DOWN, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_PIPE, KC_NO, \
+   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_MS_BTN1, KC_MS_BTN3, KC_MS_BTN2, KC_BSLS, KC_NO, \
+   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO
   ),
 
   [_ADJUST] = LAYOUT(
