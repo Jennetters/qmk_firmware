@@ -15,13 +15,19 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-
 #pragma once
 
+#define TAPPING_TERM 100
 
+/* Use I2C or Serial, not both */
 #define USE_SERIAL
+// #define USE_I2C
 
-#define MASTER_LEFT
-// #define MASTER_RIGHT
+//#define MASTER_LEFT
+#define MASTER_RIGHT
 //#define EE_HANDS
 // Rows are doubled-up
+
+#define MOUSEKEY_DELAY 0
+#define MOUSEKEY_TIME_TO_MAX 60
+#define MOUSEKEY_INTERVAL 20
