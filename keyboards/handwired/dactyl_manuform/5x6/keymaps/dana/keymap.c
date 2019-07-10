@@ -12,6 +12,16 @@ enum custom_keycodes {
   QWERTY = SAFE_RANGE,
 };
 
+// enum unicode_names {
+//   EURO,
+//   POUND,
+// };
+
+// const uint32_t PROGMEM unicode_map[] = {
+//   [EURO]  = 0x20AC,  // € 
+//   [POUND] = 0x00A3,  // £
+// };
+
 #define RAISE MO(_RAISE)
 #define LOWER MO(_LOWER)
 
@@ -25,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       KC_LGUI,KC_LALT,                                                       KC_RCTL, KC_RSFT,
                                       KC_LCTL, KC_SPC,                        KC_SPC, LOWER,
                                       KC_BSLS, KC_PGUP,                       KC_HOME, KC_PSCR,
-                                      KC_F4, KC_PGDN,                         KC_END, KC_F5
+                                      UC(0x20AC), KC_PGDN,                         KC_END, UC(0x00A3)
   ),
 
   [_LOWER] = LAYOUT_5x6(
